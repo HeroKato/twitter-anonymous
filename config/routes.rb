@@ -64,5 +64,5 @@ Rails.application.routes.draw do
   get "/signout_twitter" => "sessions#destroy"
   
   # Oauth routes ←api叩くと/auth/twitter/callbackにリダイレクトされます。session生成しています。
-  get "/auth/:provider/callback" => "sessions#create" 
+  get "/auth/:provider" => "sessions#create" 
 end
