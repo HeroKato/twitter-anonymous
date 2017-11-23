@@ -54,5 +54,13 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  root 'application#hello'
+  root 'home#index'
+  get "home/index"
+  
+  # twitter routes
+  get "/tweet" => "tweet#timeline"
+  get "/signout_twitter" => "sessions#destroy"
+  
+  # Oauth routes ←api叩くと/auth/twitter/callbackにリダイレクトされます。session生成しています。
+  get "/auth/:provider/callback" => "sessions#create" 
 end
