@@ -59,11 +59,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   get "home/index"
   
-  # twitter routes
-  get "/tweet" => "tweet#timeline"
-  get "/signout_twitter" => "sessions#destroy"
-  
   # Oauth routes ←api叩くと/auth/twitter/callbackにリダイレクトされます。session生成しています。
-  get "/auth/twitter/callback" => "sessions#create"
+  get '/auth/:provider/callback' => 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 end
