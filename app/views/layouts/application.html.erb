@@ -9,15 +9,15 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
-    <% if flash[:info] %>
-      <div class="info alert-success">
-        <%= flash[:info] %>
+    <% if flash[:success] %>
+      <div class="alert alert-success">
+        <%= flash[:success] %>
       </div>
     <% end %>
     <%= @auth %>
-    <% if flash[:notice] %>
+    <% if flash[:info] %>
       <div class="alert alert-success">
-        <%= flash[:notice] %>
+        <%= flash[:info] %>
       </div>
     <% end %>
     <%= yield %>
