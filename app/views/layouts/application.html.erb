@@ -14,7 +14,7 @@
         <%= flash[:success] %>
       </div>
     <% end %>
-    <%= @auth %>
+    <%= @auth.provider %>
     <% if flash[:info] %>
       <div class="alert alert-success">
         <%= flash[:info] %>
