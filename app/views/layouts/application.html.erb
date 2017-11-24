@@ -9,6 +9,7 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
+    <%= @auth %>
     <% if flash[:notice] %>
       <div class="alert alert-success">
         <%= flash[:notice] %>
